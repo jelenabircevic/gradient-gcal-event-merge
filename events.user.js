@@ -60,7 +60,7 @@ const merge = (mainCalender) => {
           event.originalLeft = event.originalLeft || eventPosition.left;
           event.originalRight = event.originalRight || eventPosition.right;
           return {
-            left: eventPosition.left - parentPosition.left,
+            left: Math.max(eventPosition.left - parentPosition.left, 0),
             right: parentPosition.right - eventPosition.right,
           }
         });
